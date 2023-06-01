@@ -17,6 +17,10 @@
     padding: 10px;
     font-weight: bold;
   }
+  .board-container a {
+      text-decoration: none;
+      color: inherit;
+    }
   </style>
 </head>
 <body>
@@ -30,7 +34,7 @@
 <ul class="slide_pagination"></ul>
 </div>
 </div>
-<a href="./Board/gamedev.php">
+<a href="./Board/gameDev.php">
 <div class="board-container">
   <div class="board">
     <div class="board-img">
@@ -40,20 +44,25 @@
   </div>
 </a>
 
+<a href="./Board/webDev.php">
   <div class="board">
     <div class="board-img">
       <img src="./img/web.png" alt="">
     </div>
     <div class="board-title">웹 개발 게시판</div>
   </div>
+</a>
 
+<a href="./Board/appDev.php">
   <div class="board">
     <div class="board-img">
       <img src="./img/app.png" alt="">
     </div>
     <div class="board-title">앱 개발 게시판</div>
   </div>
+</a>
 
+<a href="./Board/team.php">
   <div class="board">
     <div class="board-img">
       <img src="./img/team.png" alt="">
@@ -61,6 +70,7 @@
     <div class="board-title">팀 모집 게시판</div>
   </div>
 </div>
+</a>
 
 <script>
   function toggleDropdown() {
