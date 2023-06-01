@@ -1,0 +1,51 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+.dropdown-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0; /* 드롭다운이 왼쪽에서 나오도록 수정 */
+  z-index: 100;
+  width: 100px; /* 드롭다운 박스의 너비를 조정 */
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .2);
+  display: none; /* 드롭다운 박스 숨김 */
+}
+
+.dropdown-menu > a {
+  color: #333;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-menu > a:hover {
+  background: #f0f0f0;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+ 
+}
