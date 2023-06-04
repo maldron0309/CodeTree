@@ -1,10 +1,20 @@
+<?php
+$connect = mysqli_connect('localhost', 'root', '1234', 'codetree') or die("connect failed");
+
+$query = "select * from board order by number desc";
+$result = mysqli_query($connect, $query);
+$total = mysqli_num_rows($result);
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>CodeTree</title>
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/slide.css">
   <link rel="stylesheet" href="./css/profile.css">
@@ -55,38 +65,44 @@
 </head>
 <body>
   <nav>
-    <img src="img/logo.png" class="logo">
-    <img src="img/user.png" class="user-pic" onclick="toggleMenu()">
+  <h1><a href="index.php">CodeTree</a></h1>
+  <?php
+    if (isset($_SESSION['userid'])) {
+      $userid = $_SESSION['userid'];
 
-    <div class="sub-menu-wrap" id="subMenu">
-      <div class="sub-menu">
-        <div class="user-info">
-          <img src="img/user.png" alt="">
-          <h2>NAME</h2>
-        </div>
-        <hr>
+      echo "<img src=\"img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
+      echo "<div class=\"sub-menu-wrap\" id=\"subMenu\">";
+      echo "<div class=\"sub-menu\">";
+      echo "<div class=\"user-info\">";
+      echo "<img src=\"img/user.png\" alt=\"\">";
+      echo "<h2>$userid</h2>";
+      echo "</div>";
+      echo "<hr>";
+      echo "<a href=\"#\" class=\"sub-menu-link\">";
+      echo "<img src=\"img/pro.png\" alt=\"\">";
+      echo "<p>Edit Profile</p>";
+      echo "<span>></span>";
+      echo "</a>";
+      echo "<a href=\"./islogout.php\" class=\"sub-menu-link\">";
+      echo "<img src=\"img/logout.png\" alt=\"\">";
+      echo "<p>Logout</p>";
+      echo "<span>></span>";
+      echo "</a>";
+      echo "</div>";
+      echo "</div>";
+    } else {
+      echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
+    }
+  ?>
+  <script>
+    let subMenu = document.getElementById("subMenu");
 
-        <a href="#" class="sub-menu-link">
-          <img src="img/pro.png" alt="">
-          <p>Edit Profile</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-link">
-          <img src="img/logout.png" alt="">
-          <p>Edit Profile</p>
-          <span>></span>
-        </a>
+    function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+    }
+  </script>
+</nav>
 
-      </div>
-    </div>
-    <script>
-      let subMenu = document.getElementById("subMenu");
-
-      function toggleMenu(){
-        subMenu.classList.toggle("open-menu");
-      }
-    </script>
-  </nav>
   <div class="slide_wrap">
     <div class="slide">
       <div class="slide_item item1">CodeTree에 오신 것을 환영합니다!!</div>
