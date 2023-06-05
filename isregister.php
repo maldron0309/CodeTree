@@ -2,7 +2,11 @@
 $connect = mysqli_connect('localhost', 'root', '1234', 'codetree') or die("connect failed");
 
 $id = $_POST['id'];
+<<<<<<< HEAD
 $pw = $_POST['password'];
+=======
+$pw = $_POST['pw'];
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
 
 $date = date('Y-m-d H:i:s');
 

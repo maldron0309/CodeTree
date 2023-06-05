@@ -95,7 +95,11 @@
             </div>
             <button class="login-button" type="submit">Log In</button>
         </form>
+<<<<<<< HEAD
         <form action="register.php" method="POST">
+=======
+        <form action="isregister.php" method="POST">
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
             <button class="signup-button" type="submit">Sign Up</button>
         </form>
     </div>

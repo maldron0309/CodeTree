@@ -6,6 +6,7 @@ $result = mysqli_query($connect, $query);
 $total = mysqli_num_rows($result);
 
 session_start();
+<<<<<<< HEAD
 
 // 로그아웃 버튼을 눌렀을 때 세션을 파기하고 로그인 페이지로 이동
 if (isset($_GET['logout'])) {
@@ -13,6 +14,8 @@ if (isset($_GET['logout'])) {
     header('Location: index.php');
     exit;
 }
+=======
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +93,11 @@ if (isset($_GET['logout'])) {
       echo "<p>Edit Profile</p>";
       echo "<span>></span>";
       echo "</a>";
+<<<<<<< HEAD
       echo "<a href=\"?logout\" class=\"sub-menu-link\">"; // 로그아웃 링크
+=======
+      echo "<a href=\"./islogout.php\" class=\"sub-menu-link\">";
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
       echo "<img src=\"img/logout.png\" alt=\"\">";
       echo "<p>Logout</p>";
       echo "<span>></span>";
@@ -104,6 +111,7 @@ if (isset($_GET['logout'])) {
   <script>
     let subMenu = document.getElementById("subMenu");
 
+<<<<<<< HEAD
     function toggleMenu() {
       subMenu.classList.toggle("open-menu");
     }
@@ -158,3 +166,57 @@ if (isset($_GET['logout'])) {
 </body>
 </html>
 
+=======
+    function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+    }
+  </script>
+</nav>
+
+  <div class="slide_wrap">
+    <div class="slide">
+      <div class="slide_item item1">CodeTree에 오신 것을 환영합니다!!</div>
+      <div class="slide_item item2">여러분들의 정보로 CodeTree를 키워주세요</div>
+      <div class="slide_item item3">Hello, CodeTree!</div>
+      <div class="slide_prev_button slide_button">◀</div>
+<div class="slide_next_button slide_button">▶</div>
+<ul class="slide_pagination"></ul>
+</div>
+  <div class="container">
+    <div class="board">
+      <a href="./Board/gameDev.php">
+        <img src="./img/game.png" alt="">
+        <div class="board-title">게임 개발 게시판</div>
+      </a>
+    </div>
+
+    <div class="board">
+      <a href="./Board/webDev.php">
+        <img src="./img/web.png" alt="">
+        <div class="board-title">웹 개발 게시판</div>
+      </a>
+    </div>
+
+    <div class="board">
+      <a href="./Board/appDev.php">
+        <img src="./img/app.png" alt="">
+        <div class="board-title">앱 개발 게시판</div>
+      </a>
+    </div>
+
+    <div class="board">
+      <a href="./Board/team.php">
+        <img src="./img/team.png" alt="">
+        <div class="board-title">팀 구인/구직 게시판</div>
+</a>
+</div>
+  </div>
+  <script src="js/slide.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <p class="copy">&copy; CodeTree</p>
+    </div>
+  </footer>
+</body>
+</html>
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169

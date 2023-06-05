@@ -13,7 +13,11 @@ if ($connect->connect_error) {
 }
 
 $id = $_POST['id'];
+<<<<<<< HEAD
 $pw = $_POST['password']; 
+=======
+$pw = $_POST['password']; // 수정: 'pw'를 'password'로 변경
+>>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
 
 $query = "SELECT * FROM member WHERE id='$id'";
 $result = $connect->query($query);
