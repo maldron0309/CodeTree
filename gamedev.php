@@ -23,8 +23,6 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeTree</title>
   <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/slide.css">
-  <link rel="stylesheet" href="./css/profile.css">
   <style>
         footer.footer {
     position: fixed;
@@ -68,6 +66,33 @@ if (isset($_GET['logout'])) {
       font-size: 16px;
       font-weight: bold;
     }
+   
+nav:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid black;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+h1#title {
+    margin-top: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
   </style>
 </head>
 <body>
@@ -100,6 +125,7 @@ if (isset($_GET['logout'])) {
     } else {
       echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
     }
+    
   ?>
   <script>
     let subMenu = document.getElementById("subMenu");
@@ -109,52 +135,13 @@ if (isset($_GET['logout'])) {
     }
 </script>
 </nav>
-
-<div class="slide_wrap">
-    <div class="slide">
-        <div class="slide_item item1">CodeTree에 오신 것을 환영합니다!!</div>
-        <div class="slide_item item2">여러분들의 정보로 CodeTree를 키워주세요</div>
-        <div class="slide_item item3">Hello, CodeTree!</div>
-        <div class="slide_prev_button slide_button">◀</div>
-        <div class="slide_next_button slide_button">▶</div>
-        <ul class="slide_pagination"></ul>
-    </div>
-</div>
-<div class="container">
-    <div class="board">
-        <a href="gameDev.php">
-            <img src="./img/game.png" alt="">
-            <div class="board-title">게임 개발 게시판</div>
-        </a>
-    </div>
-
-    <div class="board">
-        <a href="webDev.php">
-            <img src="./img/web.png" alt="">
-            <div class="board-title">웹 개발 게시판</div>
-        </a>
-    </div>
-
-    <div class="board">
-        <a href="appDev.php">
-            <img src="./img/app.png" alt="">
-            <div class="board-title">앱 개발 게시판</div>
-        </a>
-    </div>
-
-    <div class="board">
-        <a href="team.php">
-            <img src="./img/team.png" alt="">
-            <div class="board-title">팀 구인/구직 게시판</div>
-        </a>
-    </div>
-</div>
-<script src="js/slide.js"></script>
-<footer class="footer">
-    <div class="container">
-        <p class="copy">&copy; CodeTree</p>
-    </div>
-</footer>
-</body>
-</html>
-
+    <h1 id="title">게임 개발 게시판</h1>
+    <?php
+      while ($row = mysqli_fetch_assoc($result)) {
+        // ... Your existing PHP code ...
+      }
+    ?>
+  </div>
+  <footer class="footer">
+    CodeTree &copy; 2023. All Rights Reserved.
+  </footer>
