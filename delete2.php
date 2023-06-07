@@ -1,7 +1,7 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '1234', 'codetree');
-$number = $_GET['number'];
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
+$number = $_GET['number'];
 $query = "select id from board where number = $number";
 
 $result = $connect->query($query);

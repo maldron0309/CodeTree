@@ -47,7 +47,7 @@ input[type="submit"] {
 </head>
 <body>
     <?php
-    $connect = mysqli_connect('localhost', 'root', '1234', 'codetree') or die("connect failed");
+    $connect = mysqli_connect('localhost', 'root', '1234', 'codetree');
     $number = $_GET['number'];
     $query = "select title, content, date, id from board where number = $number";
     $result = $connect->query($query);
@@ -57,7 +57,7 @@ input[type="submit"] {
     $userid = $rows['id'];
     session_start();
 
-    $URL = "./index.php";
+    $URL = "index.php";
 
     if (!isset($_SESSION['userid'])) {
         ?> <script>

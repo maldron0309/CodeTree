@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '1234', 'codetree') or die("connect failed");
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
 $query = "select * from board order by number desc";
 $result = mysqli_query($connect, $query);

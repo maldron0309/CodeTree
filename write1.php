@@ -71,13 +71,24 @@
             font-style: italic;
             color: #888;
         }
+        .back-btn a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .back-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
     <?php
     session_start();
-    $URL = "./login.php";
+    $URL = "login.php";
     $write_action_num = $_GET['iswrite'];
 
     if (!isset($_SESSION['userid'])) {
@@ -113,6 +124,9 @@
                 <input type="submit" value="작성">
             </div>
         </form>
+        <div class="back-btn">
+            <a href="javascript:history.back()">뒤로 가기</a>
+        </div>
     </div>
 </body>
 

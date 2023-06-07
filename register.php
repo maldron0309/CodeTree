@@ -89,7 +89,7 @@
 <body>
     <div class="container">
         <h1><a href="index.php">CodeTree</a></h1>
-          <form action="register.php" method="POST" onsubmit="return checkPasswordMatch();">
+          <form action="isregister.php" method="POST" onsubmit="return checkPasswordMatch();">
             <div class="form-group">  
                 <label for="id">ID:</label>
                 <input type="text" id="id" name="id" placeholder="Enter your ID">

@@ -1,21 +1,12 @@
 <?php
 session_start();
 
-// DB 연결
-$host = "localhost";
-$username = "root";
-$password = "1234";
-$dbname = "codetree";
-
-$connect = new mysqli($host, $username, $password, $dbname);
-if ($connect->connect_error) {
-    die("DB 연결 실패: " . $connect->connect_error);
-}
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
 $id = $_POST['id'];
 $pw = $_POST['password']; 
 
-$query = "SELECT * FROM member WHERE id='$id'";
+$query = "select * from member where id='$id'";
 $result = $connect->query($query);
 
 if ($result->num_rows == 1) {
@@ -25,7 +16,7 @@ if ($result->num_rows == 1) {
         $_SESSION['userid'] = $id;
 
         if (isset($_SESSION['userid'])) {
-            header("Location: ./index.php");
+            header("Location: index.php");
             exit();
         } else {
             echo "세션 저장 실패";

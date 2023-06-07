@@ -1,9 +1,9 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "1234", "codetree") or die("fail");
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
 $id = $_POST['id'];
 
-$query = "SELECT id FROM board2 WHERE id = '$id'";
+$query = "select id from board2 where id = '$id'";
 $result = mysqli_query($connect, $query);
 
 $count = mysqli_num_rows($result);

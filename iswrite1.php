@@ -1,11 +1,10 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "1234", "codetree") or die("fail");
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
 $id = $_POST['name'];
 $title = $_POST['title'];
 $content = $_POST['content'];
-date("Asia/Seoul");
-$date = date('Y-m-d H:i:s');
+$date = date('Y-m-d');
 
 $URL = 'webDev.php';
 

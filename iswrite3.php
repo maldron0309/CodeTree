@@ -1,18 +1,18 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "1234", "codetree") or die("fail");
+$connect = mysqli_connect("localhost", "root", "1234", "codetree");
 
 $id = $_POST['name'];
 $title = $_POST['title'];
 $content = $_POST['content'];
-$date = date('Y-m-d H:i:s');
+$date = date('Y-m-d');
 
 $URL = 'team.php';
 
 
 
 
-$query = "INSERT INTO board4     (title, content, date, hit, id) 
-        VALUES ('$title', '$content', '$date', 0, '$id')";
+$query = "insert into board4(title, content, date, hit, id) 
+        values ('$title', '$content', '$date', 0, '$id')";
 
 
 $result = mysqli_query($connect, $query);

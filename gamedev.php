@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" href="./css/header.css">
     <style>
-        footer.footer {
+      footer.footer {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -16,93 +16,105 @@
             padding: 10px;
             font-weight: bold;
         }
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .board {
+        width: 300px;
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .board {
-            width: 200px;
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            text-align: center;
-        }
+    .board img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
 
-        .board img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-        }
+    .board-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-        .board-title {
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .board-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        /* 게시판 스타일 */
-        .board-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .board-table th,
+    .board-table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
 
-        .board-table th,
-        .board-table td {
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
+    .board-table th {
+        background-color: #f1f1f1;
+        font-weight: bold;
+        text-align: center;
+    }
 
-        .board-table th {
-            background-color: #f1f1f1;
-            font-weight: bold;
-            text-align: center;
-        }
+    .board-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
 
-        .board-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+    .board-table a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-        .board-table a {
-            text-decoration: none;
-        }
+    .board-table a:hover {
+        text-decoration: underline;
+    }
 
-        .board-table a:hover {
-            text-decoration: underline;
-        }
+    .write-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
 
-        .write-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 4px;
-            text-decoration: none;
-        }
+    .write-btn:hover {
+        background-color: #45a049;
+    }
 
-        .write-btn:hover {
-            background-color: #45a049;
-        }
+    .login-msg {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login-msg a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+
+    .login-msg a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
+
 <?php
 session_start();
 $connect = mysqli_connect("localhost", "root", "1234", "codetree");
-
-if (!$connect) {
-    die('데이터베이스 연결에 실패했습니다: ' . mysqli_connect_error());
-}
-
 
 if (isset($_GET['logout'])) {
     session_unset();
@@ -138,7 +150,7 @@ if (isset($_GET['logout'])) {
         echo "</div>";
         echo "</div>";
     } else {
-        echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
+        echo "<a href=\"login.php\" class=\"login-btn\">로그인</a>";
     }
     
     ?>

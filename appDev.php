@@ -92,17 +92,17 @@
         .write-btn:hover {
             background-color: #45a049;
         }
+        .board-table a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
+
 <?php
 session_start();
 $connect = mysqli_connect("localhost", "root", "1234", "codetree");
-
-if (!$connect) {
-    die('데이터베이스 연결에 실패했습니다: ' . mysqli_connect_error());
-}
-
 
 if (isset($_GET['logout'])) {
     session_unset();
