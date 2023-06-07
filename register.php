@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>회원가입 페이지</title>
+    <title>register_Page</title>
     <style>
         * {
           margin: 0;
@@ -89,7 +89,7 @@
 <body>
     <div class="container">
         <h1><a href="index.php">CodeTree</a></h1>
-        <form action="isregister.php" method="POST">
+          <form action="register.php" method="POST" onsubmit="return checkPasswordMatch();">
             <div class="form-group">  
                 <label for="id">ID:</label>
                 <input type="text" id="id" name="id" placeholder="Enter your ID">
@@ -99,15 +99,58 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password">
             </div>
+            <div class="form-group">
+  <label for="password_check">Confirm Password:</label>
+  <input type="password" id="password_check" name="password_check" placeholder="Re-enter your password">
+</div>
             <button class="signup-button" type="submit">Sign Up</button>
         </form>
     </div>
 
-    <script>
-        function checkDuplicate() {
-            // 중복 체크 로직 구현
-            alert("중복 체크 기능은 구현되지 않았습니다.");
+
+<script>
+function checkDuplicate() {
+  const id = document.getElementById("id").value;
+  
+  if (id.trim() === "") {
+    alert("아이디를 입력하세요");
+    document.getElementById("id").focus();
+    return;
+  }
+  
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        if (xhr.responseText === "success") {
+          alert("사용 가능한 아이디입니다.");
+        } else {
+          alert("중복된 아이디입니다.");
         }
-    </script>
+      } else {
+        alert("오류가 발생했습니다. 다시 시도하세요.");
+      }
+    }
+  };
+  
+  xhr.open("POST", "check.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("id=" + id);
+}
+
+function checkPasswordMatch() {
+  const password = document.getElementById("password").value;
+  const password_check = document.getElementById("password_check").value;
+
+  if (password !== password_check) {
+    alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+    document.getElementById("password_check").focus();
+    return false;
+  }
+  return true;
+}
+
+</script>
+
 </body>
 </html>

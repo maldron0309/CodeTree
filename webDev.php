@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>WebDev_Board</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="./css/header.css">
     <style>
@@ -48,6 +49,7 @@
             font-weight: bold;
         }
 
+        /* 게시판 스타일 */
         .board-table {
             width: 100%;
             border-collapse: collapse;
@@ -166,14 +168,14 @@ if ($connect) {
             </thead>
             <tbody>
             <?php
-            $total = mysqli_num_rows($result); \
+            $total = mysqli_num_rows($result);
             while ($rows = mysqli_fetch_assoc($result)) {
                 $class = $total % 2 == 0 ? "even" : "";
                 ?>
                 <tr class="<?php echo $class; ?>">
                     <td width="50" align="center"><?php echo $total; ?></td>
                     <td width="500" align="center">
-                        <a href="read.php?number=<?php echo $rows['number']; ?>">
+                        <a href="../board/read.php?number=<?php echo $rows['number']; ?>">
                             <?php echo $rows['title']; ?>
                         </a>
                     </td>
@@ -189,7 +191,7 @@ if ($connect) {
         </table>
 
         <div class="text" style="text-align: center; margin-top: 20px;">
-        <a href="write.php?iswrite=1" class="write-btn">글쓰기</a>
+        <a href="write1.php?iswrite=1" class="write-btn">글쓰기</a>
         </div>
         <?php
     } else {

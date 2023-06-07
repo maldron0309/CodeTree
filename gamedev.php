@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>GameDev_Board</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="./css/header.css">
     <style>
@@ -168,14 +169,14 @@ if ($connect) {
             </thead>
             <tbody>
             <?php
-            $total = mysqli_num_rows($result); // 게시글 수
+            $total = mysqli_num_rows($result); 
             while ($rows = mysqli_fetch_assoc($result)) {
                 $class = $total % 2 == 0 ? "even" : "";
                 ?>
                 <tr class="<?php echo $class; ?>">
                     <td width="50" align="center"><?php echo $total; ?></td>
                     <td width="500" align="center">
-                        <a href="../board/read.php?number=<?php echo $rows['number']; ?>">
+                        <a href="/read.php?number=<?php echo $rows['number']; ?>">
                             <?php echo $rows['title']; ?>
                         </a>
                     </td>

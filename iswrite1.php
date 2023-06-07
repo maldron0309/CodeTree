@@ -4,9 +4,13 @@ $connect = mysqli_connect("localhost", "root", "1234", "codetree") or die("fail"
 $id = $_POST['name'];
 $title = $_POST['title'];
 $content = $_POST['content'];
+date("Asia/Seoul");
 $date = date('Y-m-d H:i:s');
 
 $URL = 'webDev.php';
+
+
+
 
 $query = "INSERT INTO board2 (title, content, date, hit, id) 
         VALUES ('$title', '$content', '$date', 0, '$id')";

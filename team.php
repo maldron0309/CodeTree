@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Team_Board</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="./css/header.css">
     <style>
@@ -48,7 +49,7 @@
             font-weight: bold;
         }
 
-        /* 게시판 스타일 */
+      
         .board-table {
             width: 100%;
             border-collapse: collapse;
@@ -190,7 +191,7 @@ if ($connect) {
         </table>
 
         <div class="text" style="text-align: center; margin-top: 20px;">
-        <a href="write.php?iswrite=1" class="write-btn">글쓰기</a>
+        <a href="write3.php?iswrite=1" class="write-btn">글쓰기</a>
         </div>
         <?php
     } else {
@@ -203,7 +204,7 @@ if ($connect) {
 ?>
 
 <footer class="footer">
-    CodeTree - 게임 개발 게시판
+    CodeTree - 팀 모집 게시판
 </footer>
 </body>
 </html>

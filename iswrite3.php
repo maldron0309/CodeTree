@@ -8,8 +8,12 @@ $date = date('Y-m-d H:i:s');
 
 $URL = 'team.php';
 
-$query = "INSERT INTO board4 (title, content, date, hit, id) 
+
+
+
+$query = "INSERT INTO board4     (title, content, date, hit, id) 
         VALUES ('$title', '$content', '$date', 0, '$id')";
+
 
 $result = mysqli_query($connect, $query);
 if ($result) {

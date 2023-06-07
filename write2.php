@@ -78,7 +78,7 @@
     <?php
     session_start();
     $URL = "./login.php";
-    $write_action_num = $_GET['iswrite2.php'];
+    $write_action_num = $_GET['iswrite'];
 
     if (!isset($_SESSION['userid'])) {
     ?>
