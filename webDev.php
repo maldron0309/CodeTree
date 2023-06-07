@@ -58,7 +58,7 @@ if (isset($_SESSION['userid'])) {
     </table>
 
     <div class="text">
-        <font style="cursor: hand" onClick="location.href='../board/write.php?write_action_num=1'">글쓰기</font>
+        <font style="cursor: hand" onClick="location.href='write.php?iswrite.php'">글쓰기</font>
     </div>
 <?php
 } else {

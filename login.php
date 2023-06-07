@@ -79,11 +79,16 @@
           cursor: pointer;
           margin-top: 10px;
         }
+        
+        .container h1 a {
+          color: black;
+          text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>CodeTree</h1>
+        <h1><a href="index.php">CodeTree</a></h1>
         <form action="islogin.php" method="POST">
             <div class="form-group">  
                 <label for="id">ID:</label>
@@ -95,11 +100,7 @@
             </div>
             <button class="login-button" type="submit">Log In</button>
         </form>
-<<<<<<< HEAD
         <form action="register.php" method="POST">
-=======
-        <form action="isregister.php" method="POST">
->>>>>>> 3691acaae23517bbc2c7446a732feb88a4656169
             <button class="signup-button" type="submit">Sign Up</button>
         </form>
     </div>
