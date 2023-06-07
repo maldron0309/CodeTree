@@ -3,8 +3,6 @@
 <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/slide.css">
-    <link rel="stylesheet" href="./css/profile.css">
     <style>
         footer.footer {
             position: fixed;
@@ -104,10 +102,10 @@ if (!$connect) {
     die('데이터베이스 연결에 실패했습니다: ' . mysqli_connect_error());
 }
 
-// 로그아웃 처리
+
 if (isset($_GET['logout'])) {
-    session_unset(); // 세션 변수 모두 제거
-    session_destroy(); // 세션 파기
+    session_unset();
+    session_destroy(); 
     header('Location: index.php');
     exit;
 }
@@ -141,6 +139,7 @@ if (isset($_GET['logout'])) {
     } else {
         echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
     }
+    
     ?>
     <script>
         let subMenu = document.getElementById("subMenu");

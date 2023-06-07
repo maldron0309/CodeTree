@@ -91,7 +91,7 @@
     ?>
 
     <div class="container">
-        <form method="post" action='iswrite.php'>
+        <form method="post" action='iswrite1.php'>
             <div class="title">게시글 작성하기</div>
             <div class="form-group">
                 <label for="name">작성자</label>

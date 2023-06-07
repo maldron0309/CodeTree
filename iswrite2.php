@@ -9,8 +9,8 @@ $date = date('Y-m-d H:i:s');
 $URL = 'index.php';                   
 
 
-$query = "INSERT INTO board (number, title, content, date, hit, id) 
-        values(null,'$title', '$content', '$date', 0, '$id')";
+$query = "INSERT INTO board3 (title, content, date, hit, id) 
+        values('$title', '$content', '$date', 0, '$id')";
 
 
 $result = $connect->query($query);
