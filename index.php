@@ -22,9 +22,8 @@ if (isset($_GET['logout'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeTree</title>
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/slide.css">
-  <link rel="stylesheet" href="./css/profile.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/slide.css">
   <style>
         footer.footer {
     position: fixed;
@@ -77,28 +76,28 @@ if (isset($_GET['logout'])) {
     if (isset($_SESSION['userid'])) {
       $userid = $_SESSION['userid'];
 
-      echo "<img src=\"img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
+      echo "<img src=\"image/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
       echo "<div class=\"sub-menu-wrap\" id=\"subMenu\">";
       echo "<div class=\"sub-menu\">";
       echo "<div class=\"user-info\">";
-      echo "<img src=\"img/user.png\" alt=\"\">";
+      echo "<img src=\"image/user.png\" alt=\"\">";
       echo "<h2>$userid</h2>";
       echo "</div>";
       echo "<hr>";
       echo "<a href=\"#\" class=\"sub-menu-link\">";
-      echo "<img src=\"img/pro.png\" alt=\"\">";
+      echo "<img src=\"image/pro.png\" alt=\"\">";
       echo "<p>Edit Profile</p>";
       echo "<span>></span>";
       echo "</a>";
       echo "<a href=\"?logout\" class=\"sub-menu-link\">";
-      echo "<img src=\"img/logout.png\" alt=\"\">";
+      echo "<img src=\"image/logout.png\" alt=\"\">";
       echo "<p>Logout</p>";
       echo "<span>></span>";
       echo "</a>";
       echo "</div>";
       echo "</div>";
     } else {
-      echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
+      echo "<a href=\"./Board/login.php\" class=\"login-btn\">Login</a>";
     }
   ?>
   <script>
@@ -122,28 +121,28 @@ if (isset($_GET['logout'])) {
 </div>
 <div class="container">
     <div class="board">
-        <a href="gameDev.php">
+        <a href="./Board/gameDev.php">
             <img src="./img/game.png" alt="">
             <div class="board-title">게임 개발 게시판</div>
         </a>
     </div>
 
     <div class="board">
-        <a href="webDev.php">
+        <a href="./Board/webDev.php">
             <img src="./img/web.png" alt="">
             <div class="board-title">웹 개발 게시판</div>
         </a>
     </div>
 
     <div class="board">
-        <a href="appDev.php">
+        <a href="./Board/appDev.php">
             <img src="./img/app.png" alt="">
             <div class="board-title">앱 개발 게시판</div>
         </a>
     </div>
 
     <div class="board">
-        <a href="team.php">
+        <a href="./Board/team.php">
             <img src="./img/team.png" alt="">
             <div class="board-title">팀 구인/구직 게시판</div>
         </a>
