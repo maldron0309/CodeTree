@@ -88,8 +88,8 @@
 <body>
     <?php
     session_start();
-    $URL = "login.php";
-    $write_action_num = $_GET['iswrite'];
+    $URL = "./Board/login.php";
+    $write_action_num = $_GET['./Board/iswrite'];
 
     if (!isset($_SESSION['userid'])) {
     ?>
@@ -102,7 +102,7 @@
     ?>
 
     <div class="container">
-        <form method="post" action='iswrite2.php'>
+        <form method="post" action='./Board/iswrite2.php'>
             <div class="title">게시글 작성하기</div>
             <div class="form-group">
                 <label for="name">작성자</label>
