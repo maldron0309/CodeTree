@@ -45,7 +45,7 @@ if (isset($_POST['check_duplicate'])) {
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
-            echo "<script>alert('회원가입에 성공하였습니다.'); location.replace('login.php');</script>";
+            echo "<script>alert('회원가입에 성공하였습니다.'); location.replace('./login.php');</script>";
         } else {
             echo "<script>alert('회원가입에 실패하였습니다.');</script>";
         }

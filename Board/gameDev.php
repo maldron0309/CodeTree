@@ -3,7 +3,7 @@
 <head>
 <title>GameDev_Board</title>
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css1/header.css">
     <style>
       footer.footer {
             position: fixed;
@@ -150,7 +150,7 @@ if (isset($_GET['logout'])) {
         echo "</div>";
         echo "</div>";
     } else {
-        echo "<a href=\"login.php\" class=\"login-btn\">로그인</a>";
+        echo "<a href=\"./login.php\" class=\"login-btn\">로그인</a>";
     }
     
     ?>
@@ -204,7 +204,7 @@ if ($connect) {
         </table>
 
         <div class="text" style="text-align: center; margin-top: 20px;">
-        <a href="write.php?iswrite=1" class="write-btn">글쓰기</a>
+        <a href="./write.php?iswrite=1" class="write-btn">글쓰기</a>
         </div>
         <?php
     } else {

@@ -3,7 +3,7 @@
 <head>
 <title>Team_Board</title>
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css1/header.css">
     <style>
         footer.footer {
             position: fixed;
@@ -196,7 +196,7 @@ if ($connect) {
         <?php
     } else {
         ?>
-        <h1 style="font-size: 25px; text-align: center;"><b>침 모집 게시판</b></h1>
+        <h1 style="font-size: 25px; text-align: center;"><b>팀 모집 게시판</b></h1>
         <p style="text-align: center;">로그인이 필요한 서비스입니다. <a href="./login.php">로그인</a> 후 이용해주세요.</p>
         <?php
     }

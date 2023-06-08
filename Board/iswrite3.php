@@ -9,8 +9,6 @@ $date = date('Y-m-d');
 $URL = 'team.php';
 
 
-
-
 $query = "insert into board4(title, content, date, hit, id) 
         values ('$title', '$content', '$date', 0, '$id')";
 

@@ -2,9 +2,11 @@
 <html>
 <head>
 <title>AppDev_Board</title>
+<link rel="stylesheet" href="css1.css">
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="./css/header.css">
+  
     <style>
+        
         footer.footer {
             position: fixed;
             bottom: 0;

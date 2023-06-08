@@ -89,8 +89,8 @@
 </head>
 <body>
     <div class="container">
-        <h1><a href="index.php">CodeTree</a></h1>
-        <form action="islogin.php" method="POST">
+        <h1><a href="./index.php">CodeTree</a></h1>
+        <form action="./islogin.php" method="POST">
             <div class="form-group">  
                 <label for="id">ID:</label>
                 <input type="text" id="id" name="id" placeholder="Enter your ID">
@@ -101,7 +101,7 @@
             </div>
             <button class="login-button" type="submit">Log In</button>
         </form>
-        <form action="register.php" method="POST">
+        <form action="./register.php" method="POST">
             <button class="signup-button" type="submit">Sign Up</button>
         </form>
     </div>

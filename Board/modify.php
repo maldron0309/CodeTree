@@ -66,7 +66,7 @@ input[type="submit"] {
         </script>
     <?php   } else if ($_SESSION['userid'] == $userid) {
     ?>
-    <form method="POST" action="ismodify.php">
+    <form method="POST" action="./ismodify.php">
         <table style="padding-top:50px" align=center width=auto border=0 cellpadding=2>
             <tr>
                 <td style="height:40; float:center; background-color:#3C3C3C">
