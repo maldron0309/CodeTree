@@ -88,8 +88,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1><a href="./index.php">CodeTree</a></h1>
+<div class="container">
+        <h1><a href="../index.php">CodeTree</a></h1>
         <form action="./islogin.php" method="POST">
             <div class="form-group">  
                 <label for="id">ID:</label>

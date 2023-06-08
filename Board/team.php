@@ -3,7 +3,7 @@
 <head>
 <title>Team_Board</title>
     <meta charset='utf-8'>
-    <link rel="stylesheet" href="./css1/header.css">
+    <link rel="stylesheet" href="../css/header.css">
     <style>
         footer.footer {
             position: fixed;
@@ -49,7 +49,7 @@
             font-weight: bold;
         }
 
-      
+        /* 게시판 스타일 */
         .board-table {
             width: 100%;
             border-collapse: collapse;
@@ -107,38 +107,38 @@ $connect = mysqli_connect("localhost", "root", "1234", "codetree");
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy(); 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 ?>
 <nav>
-    <h1><a href="index.php">CodeTree</a></h1>
+    <h1><a href="../index.php">CodeTree</a></h1>
     <?php
     if (isset($_SESSION['userid'])) {
         $userid = $_SESSION['userid'];
 
-        echo "<img src=\"img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
+        echo "<img src=\"../img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
         echo "<div class=\"sub-menu-wrap\" id=\"subMenu\">";
         echo "<div class=\"sub-menu\">";
         echo "<div class=\"user-info\">";
-        echo "<img src=\"img/user.png\" alt=\"\">";
+        echo "<img src=\"../img/user.png\" alt=\"\">";
         echo "<h2>$userid</h2>";
         echo "</div>";
         echo "<hr>";
         echo "<a href=\"#\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/pro.png\" alt=\"\">";
-        echo "<p>Edit Profile</p>";
+        echo "<img src=\"../img/pro.png\" alt=\"\">";
+        echo "<p>프로필 편집</p>";
         echo "<span>></span>";
         echo "</a>";
-        echo "<a href=\"?logout\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/logout.png\" alt=\"\">";
-        echo "<p>Logout</p>";
+        echo "<a href=\"../logout.php\" class=\"sub-menu-link\">";
+        echo "<img src=\"../img/logout.png\" alt=\"\">";
+        echo "<p>로그아웃</p>";
         echo "<span>></span>";
         echo "</a>";
         echo "</div>";
         echo "</div>";
     } else {
-        echo "<a href=\"./login.php\" class=\"login-btn\">Login</a>";
+        echo "<a href=\"../login.php\" class=\"login-btn\">로그인</a>";
     }
     ?>
     <script>
@@ -155,51 +155,49 @@ if ($connect) {
     if (isset($_SESSION['userid'])) {
         ?>
         <h1 style="font-size: 25px; text-align: center;"><b>팀 모집 게시판</b></h1>
-
         <table class="board-table">
-            <thead>
-            <tr>
-                <th width="50">번호</th>
-                <th width="500">제목</th>
-                <th width="100">작성자</th>
-                <th width="200">날짜</th>
-                <th width="50">조회수</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $total = mysqli_num_rows($result); 
-            while ($rows = mysqli_fetch_assoc($result)) {
-                $class = $total % 2 == 0 ? "even" : "";
-                ?>
-                <tr class="<?php echo $class; ?>">
-                    <td width="50" align="center"><?php echo $total; ?></td>
-                    <td width="500" align="center">
-                        <a href="../board/read.php?number=<?php echo $rows['number']; ?>">
-                            <?php echo $rows['title']; ?>
-                        </a>
-                    </td>
-                    <td width="100" align="center"><?php echo $rows['id']; ?></td>
-                    <td width="200" align="center"><?php echo $rows['date']; ?></td>
-                    <td width="50" align="center"><?php echo $rows['hit']; ?></td>
-                </tr>
-                <?php
-                $total--;
-            }
+        <thead>
+        <tr>
+            <th width="50">번호</th>
+            <th width="500">제목</th>
+            <th width="100">작성자</th>
+            <th width="200">날짜</th>
+            <th width="50">조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $total = mysqli_num_rows($result); 
+        while ($rows = mysqli_fetch_assoc($result)) {
+            $class = $total % 2 == 0 ? "even" : "";
             ?>
-            </tbody>
-        </table>
-
-        <div class="text" style="text-align: center; margin-top: 20px;">
-        <a href="write3.php?iswrite=1" class="write-btn">글쓰기</a>
-        </div>
-        <?php
-    } else {
+            <tr class="<?php echo $class; ?>">
+                <td width="50" align="center"><?php echo $total; ?></td>
+                <td width="500" align="center">
+                    <a href="../board/read.php?number=<?php echo $rows['number']; ?>">
+                        <?php echo $rows['title']; ?>
+                    </a>
+                </td>
+                <td width="100" align="center"><?php echo $rows['id']; ?></td>
+                <td width="200" align="center"><?php echo $rows['date']; ?></td>
+                <td width="50" align="center"><?php echo $rows['hit']; ?></td>
+            </tr>
+            <?php
+            $total--;
+        }
         ?>
-        <h1 style="font-size: 25px; text-align: center;"><b>팀 모집 게시판</b></h1>
-        <p style="text-align: center;">로그인이 필요한 서비스입니다. <a href="./login.php">로그인</a> 후 이용해주세요.</p>
-        <?php
-    }
+        </tbody>
+    </table>
+    <div class="text" style="text-align: center; margin-top: 20px;">
+        <a href="../board/write3.php?iswrite=1" class="write-btn">글쓰기</a>
+    </div>
+    <?php
+} else {
+    ?>
+    <h1 style="font-size: 25px; text-align: center;"><b>팀 모집 게시판</b></h1>
+    <p style="text-align: center;">로그인이 필요한 서비스입니다. <a href="../login.php">로그인</a> 후 이용해주세요.</p>
+    <?php
+}
 }
 ?>
 
@@ -207,4 +205,4 @@ if ($connect) {
     CodeTree - 팀 모집 게시판
 </footer>
 </body>
-</html>
+</html>    

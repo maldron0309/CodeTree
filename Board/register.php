@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>register_Page</title>
+    <link rel="stylesheet" href="./css1/header.css">
     <style>
         * {
           margin: 0;

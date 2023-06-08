@@ -116,21 +116,21 @@ if (isset($_GET['logout'])) {
     if (isset($_SESSION['userid'])) {
         $userid = $_SESSION['userid'];
 
-        echo "<img src=\"img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
+        echo "<img src=\"../img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
         echo "<div class=\"sub-menu-wrap\" id=\"subMenu\">";
         echo "<div class=\"sub-menu\">";
         echo "<div class=\"user-info\">";
-        echo "<img src=\"img/user.png\" alt=\"\">";
+        echo "<img src=\"../img/user.png\" alt=\"\">";
         echo "<h2>$userid</h2>";
         echo "</div>";
         echo "<hr>";
         echo "<a href=\"#\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/pro.png\" alt=\"\">";
+        echo "<img src=\"../img/pro.png\" alt=\"\">";
         echo "<p>Edit Profile</p>";
         echo "<span>></span>";
         echo "</a>";
         echo "<a href=\"?logout\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/logout.png\" alt=\"\">";
+        echo "<img src=\"../img/logout.png\" alt=\"\">";
         echo "<p>Logout</p>";
         echo "<span>></span>";
         echo "</a>";

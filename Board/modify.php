@@ -26,20 +26,19 @@
             border-bottom: 1px solid #ccc;
         }
   
-input[type="submit"] {
-  display: inline-block;
-  background-color: #4CAF50; 
-  color: #fff; 
-  text-align: center;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
-  border: none; 
-
-
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+        input[type="submit"] {
+            display: inline-block;
+            background-color: #4CAF50; 
+            color: #fff; 
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            border: none; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
         input[type="submit"]:hover {
             background-color: #45a049;
         }
@@ -80,28 +79,26 @@ input[type="submit"] {
                             <td>작성자</td>
                             <td><input type="hidden" name="id" value="<?= $_SESSION['userid'] ?>"><?= $_SESSION['userid'] ?></td>
                         </tr>
-
                         <tr>
                             <td>제목</td>
                             <td><input type="text" name="title" size="87" value="<?= $title ?>"></td>
                         </tr>
-
                         <tr>
                             <td>내용</td>
                             <td><textarea name="content" cols="75" rows="15"><?= $content ?></textarea></td>
-                        </tr>
-                    </table>
-                    <center>
-                        <input type="hidden" name="number" value="<?= $number ?>" id="modifyBtn">
-                        <input type="submit" value="수정">
-                    </center>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <?php   } else {
-    ?> <script>
-
+                            </tr>
+                </table>
+                <center>
+                    <input type="hidden" name="number" value="<?= $number ?>" id="modifyBtn">
+                    <input type="submit" value="수정">
+                </center>
+            </td>
+        </tr>
+    </table>
+</form>
+<?php   } else {
+?> 
+<script>
     alert("권한이 없습니다.");
     location.replace("<?php echo $URL ?>");
 </script>

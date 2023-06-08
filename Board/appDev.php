@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>AppDev_Board</title>
-<link rel="stylesheet" href="css1.css">
+<link rel="stylesheet" href="../css/header.css">
     <meta charset='utf-8'>
   
     <style>
@@ -109,31 +109,31 @@ $connect = mysqli_connect("localhost", "root", "1234", "codetree");
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy(); 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 ?>
 <nav>
-    <h1><a href="index.php">CodeTree</a></h1>
+    <h1><a href="../index.php">CodeTree</a></h1>
     <?php
     if (isset($_SESSION['userid'])) {
         $userid = $_SESSION['userid'];
 
-        echo "<img src=\"img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
+        echo "<img src=\"../img/user.png\" class=\"user-pic\" onclick=\"toggleMenu()\">";
         echo "<div class=\"sub-menu-wrap\" id=\"subMenu\">";
         echo "<div class=\"sub-menu\">";
         echo "<div class=\"user-info\">";
-        echo "<img src=\"img/user.png\" alt=\"\">";
+        echo "<img src=\"../img/user.png\" alt=\"\">";
         echo "<h2>$userid</h2>";
         echo "</div>";
         echo "<hr>";
         echo "<a href=\"#\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/pro.png\" alt=\"\">";
+        echo "<img src=\"../img/pro.png\" alt=\"\">";
         echo "<p>Edit Profile</p>";
         echo "<span>></span>";
         echo "</a>";
         echo "<a href=\"?logout\" class=\"sub-menu-link\">";
-        echo "<img src=\"img/logout.png\" alt=\"\">";
+        echo "<img src=\"../img/logout.png\" alt=\"\">";
         echo "<p>Logout</p>";
         echo "<span>></span>";
         echo "</a>";
@@ -177,7 +177,7 @@ if ($connect) {
                 <tr class="<?php echo $class; ?>">
                     <td width="50" align="center"><?php echo $total; ?></td>
                     <td width="500" align="center">
-                        <a href="../board/read.php?number=<?php echo $rows['number']; ?>">
+                        <a href="./Board/read.php?number=<?php echo $rows['number']; ?>">
                             <?php echo $rows['title']; ?>
                         </a>
                     </td>

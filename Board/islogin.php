@@ -16,7 +16,7 @@ if ($result->num_rows == 1) {
         $_SESSION['userid'] = $id;
 
         if (isset($_SESSION['userid'])) {
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit();
         } else {
             echo "세션 저장 실패";

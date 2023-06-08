@@ -88,7 +88,7 @@
 <body>
     <?php
     session_start();
-    $URL = "login.php";
+    $URL = "./login.php";
     $write_action_num = $_GET['iswrite'];
 
     if (!isset($_SESSION['userid'])) {
