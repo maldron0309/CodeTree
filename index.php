@@ -84,7 +84,7 @@ if (isset($_GET['logout'])) {
       echo "<h2>$userid</h2>";
       echo "</div>";
       echo "<hr>";
-      echo "<a href=\"#\" class=\"sub-menu-link\">";
+      echo "<a href=\"./Board/profile.php\" class=\"sub-menu-link\">";
       echo "<img src=\"img/pro.png\" alt=\"\">";
       echo "<p>Edit Profile</p>";
       echo "<span>></span>";
